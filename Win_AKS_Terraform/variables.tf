@@ -1,13 +1,13 @@
 variable "resource_group" {
     type = string
     description = "Resource group name"
-    default = "1-49bb2a13-playground-sandbox"
+    default = "1-0897e916-playground-sandbox"
 }
 
 variable "location" {
     type = string
     description = "RG and resources location"
-    default = "South Central US"
+    default = "West US"
 }
 
 variable "node_count_linux" {
