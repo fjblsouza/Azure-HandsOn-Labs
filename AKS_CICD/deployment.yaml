@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demolab1app2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demolab1app2
+  template:
+    metadata:
+      labels:
+        app: demolab1app2
+    spec:
+      containers:
+      - name: demolab1app2
+        image: demolab1acr.azurecr.io/demolab1app:v1
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ddemolab1app2
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: demolab1app2
